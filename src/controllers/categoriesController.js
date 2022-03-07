@@ -6,7 +6,8 @@ export async function postCategories(req, res) {
     try {
         const result = await db.query(`
             SELECT id 
-            FROM categories WHERE name=$1
+            FROM categories 
+                WHERE name=$1
             `, [category.name]);
         if (result.rowCount > 0) {
             return res.status(409).send("Categoria já criada");
