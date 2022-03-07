@@ -5,7 +5,7 @@ import { postGames, getGames } from '../controllers/gamesController.js';
 
 const gamesRouter = express.Router();
 
-gamesRouter.post('/categories', validateSchemasMiddleware(gameSchema), postGames);
-gamesRouter.get('/categories', getGames);
+gamesRouter.post('/games', validateSchemasMiddleware(gameSchema), postGames);
+gamesRouter.get('/games', getGames);
 
 export default gamesRouter;
